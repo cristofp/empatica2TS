@@ -75,7 +75,7 @@ public class ConvertApp {
                 File output = new File("TAGS_TS.csv");
                 PrintWriter pw = new PrintWriter(new FileWriter(output));
                 while(lineIterator.hasNext()){
-                    pw.println(lineIterator.next() + "," + "DEF_TAG");
+                    pw.println(lineIterator.next() + ";" + "DEF_TAG");
                 }
                 pw.close();
             } else {
