@@ -38,7 +38,7 @@ public class ConvertApp {
                     double value = Double.parseDouble(lineElem[1].trim());
                     //zapisujesz: t0+delta, wartość
                     double time = startTime + delta;
-                    pw.printf(Locale.US, "%f,%f%n", time, value);
+                    pw.printf(Locale.US, "%f;%f%n", time, value);
                 }
                 pw.close();
             } else if(empaticaFile.getFileType().equals(TypesOfFiles.ACC)) {
@@ -61,7 +61,7 @@ public class ConvertApp {
                     String[] acc_vals = lineIterator.nextLine().split(",");
                     //do każego pliku z pw wpisuje time, alalogiczna wartosc
                     for (int j = 0; j < 3; j++) {
-                        pw[j].printf(Locale.US, "%f,", time);
+                        pw[j].printf(Locale.US, "%f;", time);
                         pw[j].println(acc_vals[j]);
                     }
 //                    pw.printf(Locale.US, "%f,", time);
@@ -88,7 +88,7 @@ public class ConvertApp {
                 PrintWriter pw = new PrintWriter(new FileWriter(output));
                 for (int i = 0; lineIterator.hasNext(); i++) {
                     double time = startTime + i * delta;
-                    pw.printf(Locale.US, "%f,", time);
+                    pw.printf(Locale.US, "%f;", time);
                     pw.println(lineIterator.nextLine());
                 }
                 pw.close();
